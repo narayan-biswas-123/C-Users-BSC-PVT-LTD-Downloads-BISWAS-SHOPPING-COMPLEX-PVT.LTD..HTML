@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Biswas Shopping Complex Pvt. Ltd.</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'GA_MEASUREMENT_ID');
+</script>
+
+<!-- FontAwesome CDN for social icons -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+/>
+
+<style>
+  /* Reset and base styles */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f5f8fa;
+    color: #222;
+  }
+  a {
+    color: #004080;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Header */
+  header {
+    background: #004080;
+    color: white;
+    padding: 30px 0 20px 0;
+    text-align: center;
+    position: relative;
+  }
+  header .logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 50%;
+    border: 3px solid white;
+    background: white;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  header p {
+    margin: 5px 0;
+    font-weight: 600;
+  }
+  /* Social Icons */
+  .social-icons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  .social-icons a {
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    background-color: #0066cc;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+  .social-icons a:hover {
+    background-color: #0099ff;
+  }
+
+  /* Navigation */
+  nav {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  nav .container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    padding: 12px 0;
+  }
+  nav a {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background-color 0.25s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    background-color: #004080;
+    color: white;
+    outline: none;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: url(https://pacifictradeinvest.com/media/1zuevsxx/fmcg.jpg?width=1600&height=900&format=webp&quality=90&v=1db873c8da5c340) no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  }
+
+  /* Sections Base */
+  section {
+    padding: 60px 0;
+  }
+  h2.section-title {
+    font-size: 2.4rem;
+    text-align: center;
+    color: #004080;
+    margin-bottom: 40px;
+    letter-spacing: 1.5px;
+  }
+
+  /* Products Grid */
+  #products .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+  }
+  #products .product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  #products .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  #products .product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+  #products .product-info {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #products .product-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.3rem;
+    color: #004080;
+  }
+  #products .product-info p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  #products .product-info .price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0073e6;
+  }
+
+  /* Testimonials */
+  #testimonials {
+    background-color: #e9f1fc;
+    border-radius: 15px;
+    padding: 40px 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  #testimonials .testimonial {
+    background: white;
+    border-left: 6px solid #004080;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+  #testimonials .testimonial.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #testimonials .testimonial p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  #testimonials .testimonial h4 {
+    text-align: right;
+    font-weight: 700;
+    color: #004080;
+    margin-top: 12px;
+  }
+  #testimonials button.show-more {
+    display: block;
+    margin: 0 auto;
+    background-color: #004080;
+    border: none;
+    color: white;
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #testimonials button.show-more:hover {
+    background-color: #0073e6;
+  }
+
+  /* Contact Section */
+  #contact form {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  #contact label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #004080;
+  }
+  #contact input,
+  #contact textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  #contact input:focus,
+  #contact textarea:focus {
+    border-color: #004080;
+    outline: none;
+  }
+  #contact button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  #contact button:hover {
+    background-color: #0073e6;
+  }
+
+  /* Contact Info */
+  .contact-info {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  .contact-info h3 {
+    margin-top: 0;
+    color: #004080;
+  }
+  .contact-info p {
+    margin: 8px 0;
+    font-size: 1rem;
+  }
+  .contact-info a {
+    color: #0073e6;
+    word-break: break-all;
+  }
+  .map-container {
+    margin-top: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  .map-container iframe {
+    width: 100%;
+    height: 320px;
+    border: none;
+  }
+
+  /* Footer */
+  footer {
+    background: #004080;
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  footer a {
+    color: #99c2ff;
+  }
+  footer a:hover {
+    color: white;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav .container {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    header h1 {
+      font-size: 1.8rem;
+    }
+    .hero {
+      font-size: 1.5rem;
+      padding: 70px 20px;
+    }
+    #products .product-card img {
+      height: 140px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="https://www.shutterstock.com/image-vector/letter-logo-bsc-monogram-600nw-1949585713.jpg" class="logo" />
+    <h1>Biswas Shopping Complex Pvt. Ltd.</h1>
+    <p>VILL+P.O. - PakuaHat, Malda - 732138, West Bengal, India</p>
+    <p>GSTIN: 19AAKCB2807P1Z6 | FSSAI: 12824010000070</p>
+    <p>📞 +91-9733364741 | +91-6296914380 | +91-7679097015</p>
+    
+    <div class="social-icons" aria-label="Social media links">
+      <a href="https://facebook.com/biswasshopping" target="_blank" aria-label="Facebook" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://instagram.com/biswasshopping" target="_blank" aria-label="Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/919733364741" target="_blank" aria-label="WhatsApp" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="container">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#offers">Offers</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero" id="home">
+  <h2>Welcome to Biswas Shopping Complex — Your Trusted FMCG Partner</h2>
+</section>
+
+<div class="container">
+
+  <!-- About Us Placeholder -->
+  <section id="about">
+    <h2 class="section-title">About Us</h2>
+    <p style="max-width:700px;margin:0 auto 40px auto; font-size:1.1rem; line-height:1.6; color:#444;">
+      Biswas Shopping Complex Pvt. Ltd. has been serving the Malda community since 2022 with a commitment to quality groceries and excellent customer service. We source fresh produce, staple food items, and household essentials directly from trusted suppliers, ensuring the best value for our customers.
+    </p>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products">
+    <h2 class="section-title">Our Products</h2>
+    <div class="product-grid">
+      <article class="product-card">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2023/4/302444181/ET/GK/MQ/116890772/snack-foods-500x500.png" alt="Fresh Snacks & Namkeen" />
+        <div class="product-info">
+          <h3>Fresh Snacks & Namkeen</h3>
+          <p>Wide variety of tasty snacks and namkeens from popular brands.</p>
+          <div class="price">Starting @ ₹5</div>
+        </div>
+      </article>
+      <article class="product-card">
+        <img src="https://5.imimg.com/data5/UI/GS/MY-39694021/amul-dairy-products-500x500.jpg" alt="Dairy Products" />
+        <div class="product-info">
+          <h3>Dairy Products</h3>
+          <p>Fresh milk, curd, butter, and other dairy essentials from trusted farms.</p>
+          <div class="price">Starting at lower prices</div>
+        </div>
+      </article>
+      <article class="product-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOK2YfDH9OubNtYXjHgo3eRE-Pr2cxg1jY2w&s" alt="dry fruits" />
+        <div class="product-info">
+          <h3>Fresh Dry Fruits</h3>
+          <p>Wide variety of imported dry fruits and seeds from popular brands.</p>
+          <div class="price">Starting at ₹43</div>
+        </div>
+      </article>
+      <article class="product-card">
+        <img src="https://www.unlockfood.ca/EatRightOntario/media/Website-images-resized/How-to-store-fruit-to-keep-it-fresh-resized.jpg" alt="Fresh Fruits" />
+        <div class="product-info">
+          <h3>Fresh Fruits</h3>
+          <p>Seasonal and exotic fruits, handpicked for freshness and taste.</p>
+          <div class="price">Starting at ₹30/kg</div>
+        </div>
+      </article>
+      <article class="product-card">
+        <img src="https://suhana.com/cdn/shop/articles/Garam-to-chat-500x380-2.png?v=1709544704" alt="Spices and Masalas" />
+        <div class="product-info">
+          <h3>Spices & Masalas</h3>
+          <p>Authentic spices and blends sourced from premium farms across India.</p>
+          <div class="price">Starting at ₹10/pack</div>
+        </div>
+      </article>
+      <article class="product-card">
+        <img src="https://cdn.shopify.com/s/files/1/0064/8439/4039/files/Household-Essentials.jpg?v=1566467543" alt="Household Essentials" />
+        <div class="product-info">
+          <h3>Household Essentials</h3>
+          <p>Cleaning supplies, kitchenware, and everyday necessities to keep your home running smoothly.</p>
+          <div class="price">Various prices available</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Services Placeholder -->
+  <section id="services">
+    <h2 class="section-title">Our Services</h2>
+    <p style="max-width:700px;margin:0 auto 40px auto; font-size:1.1rem; line-height:1.6; color:#444;">
+      We provide doorstep delivery, bulk order discounts, and personalized grocery lists for regular customers. Our dedicated customer support team is always available to assist you.
+    </p>
+  </section>
+
+  <!-- Offers Placeholder -->
+  <section id="offers">
+    <h2 class="section-title">Current Offers</h2>
+    <ul style="max-width:700px;margin:0 auto 40px auto; font-size:1.1rem; color:#444; list-style-type: disc; padding-left: 20px;">
+      <li>Buy more. Save more.</li>
+      <li>Get extra discounts on purchaing bulk.</li>
+      <li>Beauty and Skin care products @ upto 60% off.</li>
+      <li>Aashirvaad atta @ ₹230 only.</li>
+      <li>Sunlight detergent powder 1kg @ ₹85 only.</li>
+      <li>Get extra benifit on GST savings.</li>
+      <li>Free delivery on orders above ₹1000.</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials with Animation -->
+  <section id="testimonials">
+    <h2 class="section-title">Testimonials</h2>
+
+    <div class="testimonial active visible" tabindex="0">
+      <p>"Biswas Shopping Complex always has the freshest prodects	! I love their doorstep delivery service."</p>
+      <h4>- Anjali Sharma</h4>
+    </div>
+
+    <div class="testimonial" tabindex="0">
+      <p>"The staff is very friendly and helpful. I trust their products and have been a loyal customer for years."</p>
+      <h4>- Ramesh Gupta</h4>
+    </div>
+
+    <div class="testimonial" tabindex="0">
+      <p>"Great variety of products at reasonable prices. Their dairy section is my go-to for quality milk and butter."</p>
+      <h4>- Priya Sen</h4>
+    </div>
+
+    <div class="testimonial" tabindex="0">
+      <p>"Efficient and timely delivery! The best grocery shopping experience in Malda."</p>
+      <h4>- Manoj Das</h4>
+    </div>
+
+    <div class="testimonial" tabindex="0">
+      <p>"I appreciate the organic and fresh options they offer, and the staff always gives excellent recommendations."</p>
+      <h4>- Suman Roy</h4>
+    </div>
+
+    <button class="show-more" aria-expanded="false" aria-controls="moreTestimonials">Show More Testimonials</button>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <form action="mailto:biswasshopping@example.com" method="post" enctype="text/plain">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="contact-info">
+      <h3>Contact Information</h3>
+      <p><strong>Address:</strong> VILL+P.O. PakuaHat, Malda - 732138, West Bengal, India</p>
+      <p><strong>Phone Numbers:</strong></p>
+      <p>📞 +91-9733364741</p>
+      <p>📞 +91-6296914380</p>
+      <p>📞 +91-7679097015</p>
+      <p><strong>Email:</strong> <a href="mailto:biswasshopingcomplexpvtltd@gmail.com">biswasshopingcomplexpvtltd@gmail.com</a></p>
+      <p><strong>GSTIN:</strong> 19AAKCB2807P1Z6</p>
+      <p><strong>FSSAI License:</strong> 12824010000070</p>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3682.988536986536!2d87.89012301502207!3d25.064289983944955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f51475c5f7caa3%3A0x7d24057665e4ff1d!2sPakua%20Hat%2C%20West%20Bengal%20732138!5e0!3m2!1sen!2sin!4v1696413757423!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Location Map"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+</div>
+<h4><strong>Know more about us:</strong> <a href="https://www.allindiaitr.com/company/biswas-shopping-complex-private-limited/U52100WB2021PTC249351">biswasshopingcomplexpvtltd@gmail.com</a>  Click here for director's info and authorisation details </h4>
+<footer>
+  <div class="container">
+    <p>© 2022 - 2025 Biswas Shopping Complex Pvt. Ltd. All rights reserved.</p>
+    <p>
+      Developed by Narayan Biswas  | <a href="#privacy-policy">Privacy Policy</a> | <a href="#terms">Terms & Conditions</a>
+    </p>
+  </div>
+</footer>
+
+<!-- Tawk.to Live Chat Script -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/YOUR_TAWKTO_PROPERTY_ID/default';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<script>
+  // Animate testimonials appearance on scroll
+  document.addEventListener("DOMContentLoaded", () => {
+    const testimonials = document.querySelectorAll("#testimonials .testimonial");
+    let currentVisibleCount = 1; // Initially show 1 testimonial
+
+    testimonials.forEach((testimonial, i) => {
+      if(i < currentVisibleCount) {
+        testimonial.classList.add("visible");
+      }
+    });
+
+    const showMoreBtn = document.querySelector("#testimonials button.show-more");
+    let expanded = false;
+
+    showMoreBtn.addEventListener("click", () => {
+      if(!expanded) {
+        testimonials.forEach(t => t.classList.add("visible"));
+        showMoreBtn.textContent = "Show Less Testimonials";
+        showMoreBtn.setAttribute("aria-expanded", "true");
+        expanded = true;
+      } else {
+        testimonials.forEach((t, i) => {
+          if(i >= currentVisibleCount) t.classList.remove("visible");
+        });
+        showMoreBtn.textContent = "Show More Testimonials";
+        showMoreBtn.setAttribute("aria-expanded", "false");
+        expanded = false;
+        // Scroll back to testimonials section after collapsing
+        document.getElementById("testimonials").scrollIntoView({behavior: "smooth"});
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
